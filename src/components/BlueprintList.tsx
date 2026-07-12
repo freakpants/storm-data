@@ -7,6 +7,28 @@ import {
   makeResourceIconPart,
 } from '../functions/IconNameUtils';
 
+const IngredientSlot: Component<{ slot: Record<string, number> }> = (props) => {
+  const entries = Object.entries(props.slot);
+  const [idx, setIdx] = createSignal(0);
+  const selected = () => entries[idx() % entries.length];
+  return (
+    <span
+      class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
+      onClick={(e) => { e.stopPropagation(); setIdx((i) => i + 1); }}
+      title="Click to switch ingredient"
+    >
+      <img
+        src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(selected()[0])}.png`}
+        alt={selected()[0]}
+        height={30}
+        width={30}
+        class="rounded-sm"
+      />
+      <span class="tabular-nums">{selected()[1]}</span>
+    </span>
+  );
+};
+
 export const BlueprintList: Component<{
   blueprintsSignal: Signal<string[]>;
   highlightedBlueprintSignal: Signal<string>;
@@ -81,37 +103,24 @@ export const BlueprintList: Component<{
                               <For each={ingredientSlots}>
                                 {(slot, slotIdx) => (
                                   <>
-                                    <span class="flex items-center space-x-0.5">
-                                      <For each={Object.entries(slot)}>
-                                        {([name, amt]) => (
-                                          <span class="flex items-center space-x-0.5">
-                                            <img
-                                              src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(name)}.png`}
-                                              alt={name}
-                                              height={20}
-                                              width={20}
-                                              class="rounded-sm"
-                                            />
-                                            <span class="tabular-nums">{amt}</span>
-                                          </span>
-                                        )}
-                                      </For>
-                                    </span>
+                                    <IngredientSlot slot={slot} />
                                     {slotIdx() < ingredientSlots.length - 1 && <span class="mx-1">+</span>}
                                   </>
                                 )}
                               </For>
                               <span class="mx-1">=</span>
-                              <img
-                                src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(productName)}.png`}
-                                alt={productName}
-                                height={20}
-                                width={20}
-                                class="rounded-sm shadow-lg"
-                              />
-                              <Show when={options.showRecipeNumber}>
-                                <span class="tabular-nums font-bold">{amount}</span>
-                              </Show>
+                              <span class="relative inline-flex">
+                                <img
+                                  src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(productName)}.png`}
+                                  alt={productName}
+                                  height={36}
+                                  width={36}
+                                  class="rounded-sm shadow-lg"
+                                />
+                                <Show when={options.showRecipeNumber}>
+                                  <span class="absolute bottom-0 right-0 text-xs tabular-nums font-bold text-white leading-none px-0.5" style="background: rgba(0,0,0,0.5);">{amount}</span>
+                                </Show>
+                              </span>
                             </div>
                           </Show>
                         </li>
