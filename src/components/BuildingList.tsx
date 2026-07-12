@@ -9,17 +9,19 @@ import {
 
 const IngredientSlot: Component<{
   slot: Record<string, number>;
-  availableGoods: Accessor<string[]>;
+  availableGoods: Accessor<number[]>;
 }> = (props) => {
   const entries = Object.entries(props.slot);
-  const firstAvailable = () => entries.findIndex(([n]) => props.availableGoods().includes(n));
+  const firstAvailable = () => entries.findIndex(([n]) => {
+    const pid = parseInt(n);
+    return !isNaN(pid) && props.availableGoods().includes(pid);
+  });
   const [idx, setIdx] = createSignal(firstAvailable() >= 0 ? firstAvailable() : 0);
   const selected = () => entries[idx() % entries.length];
   const isAvailable = (name: string) => props.availableGoods().includes(name);
   return (
     <span
       class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
-      classList={{ 'opacity-40': !isAvailable(selected()[0]) }}
       onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % entries.length); }}
       title="Click to switch ingredient"
     >
@@ -37,7 +39,7 @@ const IngredientSlot: Component<{
 
 export const BuildingList: Component<{
   selectedBuildingsAccr: Accessor<string[]>;
-  availableGoods: Accessor<string[]>;
+  availableGoods: Accessor<number[]>;
 }> = (props) => {
   const [options] = useOptionsContext();
 
@@ -78,13 +80,13 @@ export const BuildingList: Component<{
                         if (slot) ingredientSlots.push(slot);
                       }
                       const isFulfilled = () =>
-                        ingredientSlots.every((slot) =>
-                          Object.keys(slot).some((name) =>
-                            props.availableGoods().includes(name)
+                        ingredientSlots.every((_, idx) =>
+                          Object.keys(recipe[`Ingredient_${idx + 1}_PIDs`] || {}).some((p) =>
+                            props.availableGoods().includes(parseInt(p))
                           )
                         );
                       return (
-                        <li class="mb-1" classList={{ 'opacity-40': !isFulfilled() }}>
+                        <li class="mb-1" style={{ opacity: isFulfilled() ? 1 : 0.4 }}>
                           <div class="flex space-x-1 items-center text-sm">
                             <Show when={options.showRecipeNames}>
                               <span class="font-medium">{productName}</span>

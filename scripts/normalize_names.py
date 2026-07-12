@@ -6,6 +6,7 @@ files = {
     'src/data/ResourcesList_Grouped.json': None,
     'src/data/recipesByBuilding.json': None,
     'src/data/goods_reference.json': None,
+    'src/data/biomes.json': None,
 }
 
 for path in files:
@@ -49,6 +50,18 @@ for building, recipes in rb.items():
 gr = files['src/data/goods_reference.json']
 for g in gr:
     g['Name'] = g['Name'].replace(' ', '')
+
+# Fix biomes.json - values are arrays of resource name strings
+biomes = files['src/data/biomes.json']
+bc = 0
+for biome_name, resources in biomes.items():
+    for i, name in enumerate(resources):
+        new = name.replace(' ', '')
+        if name != new:
+            resources[i] = new
+            bc += 1
+if bc:
+    print(f'Biomes: fixed {bc} names')
 
 for path, data in files.items():
     with open(path, 'w') as f:

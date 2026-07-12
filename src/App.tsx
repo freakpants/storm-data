@@ -12,7 +12,13 @@ import { RacesSelect } from './components/RacesSelect';
 import { ResolveBonusList } from './components/ResolveBonusList';
 import { ResourcesSelect } from './components/ResourcesSelect';
 import biomes from './data/biomes.json';
+import goodsReference from './data/goods_reference.json';
 import { getGoods } from './functions/getGoods';
+
+const nameToPid = Object.fromEntries(goodsReference.map((g: any) => [g.Name, g.PID]));
+const pidToName = Object.fromEntries(goodsReference.map((g: any) => [g.PID, g.Name]));
+
+const toPids = (names: string[]) => names.map((n) => nameToPid[n]).filter(Boolean) as number[];
 import { OptionsProvider } from './providers/OptionsProvider';
 
 export const App: Component = () => {
@@ -58,7 +64,7 @@ export const App: Component = () => {
   function availableGoods() {
     const raw = selectedResourcesSignal[0]();
     const produced = currentGoods();
-    return [...new Set([...raw, ...produced])];
+    return [...new Set(toPids([...raw, ...produced]))];
   }
 
   function goodsWithBlueprint() {
