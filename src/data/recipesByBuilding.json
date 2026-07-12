@@ -36,7 +36,7 @@
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Drizzle Water": 1
+        "DrizzleWater": 1
       },
       "ProductPID": 321776,
       "Time": 20,
@@ -48,7 +48,7 @@
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Clearance Water": 1
+        "ClearanceWater": 1
       },
       "ProductPID": 321775,
       "Time": 20,
@@ -60,7 +60,7 @@
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Storm Water": 1
+        "StormWater": 1
       },
       "ProductPID": 321777,
       "Time": 20,
@@ -292,7 +292,7 @@
         "Oil": 2,
         "Salt": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -475,7 +475,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -778,7 +778,7 @@
         "Wood": 6,
         "Oil": 3,
         "Coal": 2,
-        "Sea Marrow": 2
+        "SeaMarrow": 2
       },
       "Ingredient_2_PIDs": {
         "315290": 6,
@@ -850,7 +850,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -969,7 +969,7 @@
         "Oil": 2,
         "Salt": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -1841,7 +1841,7 @@
         "Wood": 6,
         "Oil": 3,
         "Coal": 2,
-        "Sea Marrow": 2
+        "SeaMarrow": 2
       },
       "Ingredient_2_PIDs": {
         "315290": 6,
@@ -2817,7 +2817,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -2928,7 +2928,7 @@
       "Building": "Fuel Rods Workshop",
       "BuildingPID": 314425,
       "Product": {
-        "Fuel Rod": 1
+        "FuelRod": 1
       },
       "ProductPID": 315305,
       "Time": 120,
@@ -2938,7 +2938,7 @@
       "Ingredient_1": {
         "Oil": 12,
         "Coal": 9,
-        "Sea Marrow": 9
+        "SeaMarrow": 9
       },
       "Ingredient_1_PIDs": {
         "315256": 12,
@@ -3069,7 +3069,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -3293,7 +3293,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -3496,7 +3496,7 @@
         "Oil": 2,
         "Salt": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -4190,7 +4190,7 @@
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Drizzle Water": 1
+        "DrizzleWater": 1
       },
       "ProductPID": 321776,
       "Time": 20,
@@ -4202,7 +4202,7 @@
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Clearance Water": 1
+        "ClearanceWater": 1
       },
       "ProductPID": 321775,
       "Time": 20,
@@ -4214,7 +4214,7 @@
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Storm Water": 1
+        "StormWater": 1
       },
       "ProductPID": 321777,
       "Time": 20,
@@ -4331,9 +4331,9 @@
       },
       "Ingredient_2": {
         "Coal": 1,
-        "Sea Marrow": 1,
         "Oil": 1,
-        "Wood": 5
+        "Wood": 5,
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315253": 1,
@@ -4355,9 +4355,9 @@
       "RecipePID": 317706,
       "Ingredient_1": {
         "Coal": 5,
-        "Sea Marrow": 5,
         "Oil": 5,
-        "Wood": 15
+        "Wood": 15,
+        "SeaMarrow": 5
       },
       "Ingredient_1_PIDs": {
         "315253": 5,
@@ -4577,7 +4577,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -4754,7 +4754,7 @@
         "Oil": 2,
         "Salt": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -4785,7 +4785,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -4825,7 +4825,7 @@
         "Wood": 6,
         "Oil": 3,
         "Coal": 2,
-        "Sea Marrow": 2
+        "SeaMarrow": 2
       },
       "Ingredient_2_PIDs": {
         "315290": 6,
@@ -4903,7 +4903,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
@@ -5129,7 +5129,7 @@
         "Wood": 6,
         "Oil": 3,
         "Coal": 2,
-        "Sea Marrow": 2
+        "SeaMarrow": 2
       },
       "Ingredient_2_PIDs": {
         "315290": 6,
@@ -5373,7 +5373,7 @@
         "Wood": 5,
         "Oil": 2,
         "Coal": 1,
-        "Sea Marrow": 1
+        "SeaMarrow": 1
       },
       "Ingredient_2_PIDs": {
         "315290": 5,
