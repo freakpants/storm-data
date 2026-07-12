@@ -3,6 +3,8 @@ import resources from 'src/data/ResourcesList_Grouped.json';
 import { BiomeSelect } from './BiomeSelect';
 import { makeResourceIconPart } from '../functions/IconNameUtils';
 
+const displayName = (name: string) => name.replace('Packof', 'Pack of').replace(/([A-Z])/g, ' $1').trim();
+
 export const ResourcesSelect: Component<{
   signal: Signal<string[]>;
   biomeSignal: Signal<string>;
@@ -19,7 +21,10 @@ export const ResourcesSelect: Component<{
     }
   };
 
-  const unselected = () => goods.filter((g) => !selectedValues().includes(g.Name));
+  const unselected = () =>
+    goods
+      .filter((g) => !selectedValues().includes(g.Name))
+      .sort((a, b) => displayName(a.Name).localeCompare(displayName(b.Name)));
 
   return (
     <div class="sm:flex sm:items-center mb-6">
@@ -45,7 +50,7 @@ export const ResourcesSelect: Component<{
           </button>
         </div>
         <div class="flex flex-row flex-wrap gap-1">
-          <For each={selectedValues()}>
+          <For each={[...selectedValues()].sort((a, b) => displayName(a).localeCompare(displayName(b)))}>
             {(name) => (
               <span
                 class="flex items-center space-x-1 bg-gray-100 rounded px-1 py-0.5 cursor-pointer text-sm hover:bg-red-100"
@@ -59,7 +64,7 @@ export const ResourcesSelect: Component<{
                   width={24}
                   class="rounded-sm"
                 />
-                <span>{name}</span>
+                <span>{displayName(name)}</span>
               </span>
             )}
           </For>
@@ -71,7 +76,7 @@ export const ResourcesSelect: Component<{
                 <span
                   class="flex items-center space-x-1 rounded px-1 py-0.5 cursor-pointer text-sm opacity-50 hover:opacity-100 transition-opacity"
                   onClick={() => toggle(good.Name)}
-                  title={good.Name}
+                  title={displayName(good.Name)}
                 >
                   <img
                     src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(good.Name)}.png`}
@@ -80,7 +85,7 @@ export const ResourcesSelect: Component<{
                     width={24}
                     class="rounded-sm"
                   />
-                  <span>{good.Name}</span>
+                  <span>{displayName(good.Name)}</span>
                 </span>
               )}
             </For>

@@ -1,28 +1,30 @@
 import type { Accessor, Component, Setter, Signal } from 'solid-js';
-import { For, Show, createSignal } from 'solid-js';
+import { For, Show, createMemo, createSignal } from 'solid-js';
 import recipesByBuilding from 'src/data/recipesByBuilding.json';
+import goodsReference from 'src/data/goods_reference.json';
 import { useOptionsContext } from 'src/providers/OptionsProvider';
 import {
   makeBuildingIconPart,
   makeResourceIconPart,
 } from '../functions/IconNameUtils';
 
+const nameToPid: Record<string, number> = Object.fromEntries(goodsReference.map((g: any) => [g.Name, g.PID]));
+
 const IngredientSlot: Component<{
   slot: Record<string, number>;
-  slotPIDs: Record<string, number>;
   availableGoods: Accessor<number[]>;
 }> = (props) => {
   const entries = Object.entries(props.slot);
-  const pids = () => Object.keys(props.slotPIDs);
-  const firstAvail = () => Math.max(pids().findIndex((p) => props.availableGoods().includes(parseInt(p))), 0);
+  const firstAvail = () => Math.max(entries.findIndex(([name]) => {
+    const pid = nameToPid[name];
+    return pid !== undefined && props.availableGoods().includes(pid);
+  }), 0);
   const [idx, setIdx] = createSignal(firstAvail());
   const selected = () => entries[idx() % entries.length];
-  const isSelectedAvailable = () => {
-    const pidKeys = pids();
-    if (pidKeys.length === 0) return false;
-    const pid = parseInt(pidKeys[idx() % pidKeys.length]);
-    return !isNaN(pid) && props.availableGoods().includes(pid);
-  };
+  const isSelectedAvailable = createMemo(() => {
+    const pid = nameToPid[selected()[0]];
+    return pid !== undefined && props.availableGoods().includes(pid);
+  });
   return (
     <span
       class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
@@ -123,7 +125,7 @@ export const BlueprintList: Component<{
                               <For each={ingredientSlots}>
                                 {({ slot, i }, slotIdx) => (
                                   <>
-                                    <IngredientSlot slot={slot} slotPIDs={recipe[`Ingredient_${i}_PIDs`] || {}} availableGoods={props.availableGoods} />
+                                    <IngredientSlot slot={slot} availableGoods={props.availableGoods} />
                                     {slotIdx() < ingredientSlots.length - 1 && <span class="mx-1">+</span>}
                                   </>
                                 )}
