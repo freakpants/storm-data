@@ -9,15 +9,24 @@ import {
 
 const IngredientSlot: Component<{
   slot: Record<string, number>;
-  available: boolean;
+  slotPIDs: Record<string, number>;
+  availableGoods: Accessor<number[]>;
 }> = (props) => {
   const entries = Object.entries(props.slot);
-  const [idx, setIdx] = createSignal(0);
+  const pids = () => Object.keys(props.slotPIDs);
+  const firstAvail = () => Math.max(pids().findIndex((p) => props.availableGoods().includes(parseInt(p))), 0);
+  const [idx, setIdx] = createSignal(firstAvail());
   const selected = () => entries[idx() % entries.length];
+  const isSelectedAvailable = () => {
+    const pidKeys = pids();
+    if (pidKeys.length === 0) return false;
+    const pid = parseInt(pidKeys[idx() % pidKeys.length]);
+    return !isNaN(pid) && props.availableGoods().includes(pid);
+  };
   return (
     <span
       class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
-      style={{ opacity: props.available ? 1 : 0.4 }}
+      style={{ opacity: isSelectedAvailable() ? 1 : 0.4 }}
       onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % entries.length); }}
       title="Click to switch ingredient"
     >
@@ -85,20 +94,16 @@ export const BlueprintList: Component<{
                       const [productName, amount] = Object.entries(
                         recipe.Product
                       )[0] as [string, number];
-                      const ingredientSlots = [];
+                      const ingredientSlots: { slot: Record<string, number>; i: number }[] = [];
                       for (let i = 1; i <= 4; i++) {
                         const slot = recipe[`Ingredient_${i}`];
-                        if (slot) ingredientSlots.push(slot);
+                        if (slot) ingredientSlots.push({ slot, i });
                       }
                       const isFulfilled = () =>
-                        ingredientSlots.every((_, idx) =>
-                          Object.keys(recipe[`Ingredient_${idx + 1}_PIDs`] || {}).some((p) =>
+                        ingredientSlots.every(({ i }) =>
+                          Object.keys(recipe[`Ingredient_${i}_PIDs`] || {}).some((p) =>
                             props.availableGoods().includes(parseInt(p))
                           )
-                        );
-                      const slotAvailable = (idx: number) =>
-                        Object.keys(recipe[`Ingredient_${idx + 1}_PIDs`] || {}).some((p) =>
-                          props.availableGoods().includes(parseInt(p))
                         );
                       return (
                         <li class="mb-1">
@@ -116,9 +121,9 @@ export const BlueprintList: Component<{
                           <Show when={options.showRecipeIcons}>
                             <div class="flex space-x-1 items-center text-xs mt-0.5">
                               <For each={ingredientSlots}>
-                                {(slot, slotIdx) => (
+                                {({ slot, i }, slotIdx) => (
                                   <>
-                                    <IngredientSlot slot={slot} available={slotAvailable(slotIdx())} />
+                                    <IngredientSlot slot={slot} slotPIDs={recipe[`Ingredient_${i}_PIDs`] || {}} availableGoods={props.availableGoods} />
                                     {slotIdx() < ingredientSlots.length - 1 && <span class="mx-1">+</span>}
                                   </>
                                 )}
