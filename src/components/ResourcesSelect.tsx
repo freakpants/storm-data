@@ -70,7 +70,16 @@ export const ResourcesSelect: Component<{
           </For>
         </div>
         <Show when={showPicker()}>
-          <div class="flex flex-row flex-wrap gap-1 mt-1 p-2 bg-gray-50 rounded border">
+          <div
+            class="flex flex-row flex-wrap gap-1 mt-1 p-2 bg-gray-50 rounded border"
+            tabindex="0"
+            ref={(el) => { el.focus(); }}
+            onFocusOut={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                setTimeout(() => setShowPicker(false), 100);
+              }
+            }}
+          >
             <For each={unselected()}>
               {(good) => (
                 <span
