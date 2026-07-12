@@ -7,14 +7,20 @@ import {
   makeResourceIconPart,
 } from '../functions/IconNameUtils';
 
-const IngredientSlot: Component<{ slot: Record<string, number> }> = (props) => {
+const IngredientSlot: Component<{
+  slot: Record<string, number>;
+  availableGoods: Accessor<string[]>;
+}> = (props) => {
   const entries = Object.entries(props.slot);
-  const [idx, setIdx] = createSignal(0);
+  const firstAvailable = () => entries.findIndex(([n]) => props.availableGoods().includes(n));
+  const [idx, setIdx] = createSignal(firstAvailable() >= 0 ? firstAvailable() : 0);
   const selected = () => entries[idx() % entries.length];
+  const isAvailable = (name: string) => props.availableGoods().includes(name);
   return (
     <span
       class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
-      onClick={(e) => { e.stopPropagation(); setIdx((i) => i + 1); }}
+      classList={{ 'opacity-40': !isAvailable(selected()[0]) }}
+      onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % entries.length); }}
       title="Click to switch ingredient"
     >
       <img
@@ -33,6 +39,7 @@ export const BlueprintList: Component<{
   blueprintsSignal: Signal<string[]>;
   highlightedBlueprintSignal: Signal<string>;
   buildingsSignal: Signal<string[]>;
+  availableGoods: Accessor<string[]>;
 }> = (props) => {
   const [options] = useOptionsContext();
   const [selectedBlueprints, setSelectedBlueprints] = props.blueprintsSignal;
@@ -85,8 +92,14 @@ export const BlueprintList: Component<{
                         const slot = recipe[`Ingredient_${i}`];
                         if (slot) ingredientSlots.push(slot);
                       }
+                      const isFulfilled = () =>
+                        ingredientSlots.every((slot) =>
+                          Object.keys(slot).some((name) =>
+                            props.availableGoods().includes(name)
+                          )
+                        );
                       return (
-                        <li class="mb-1">
+                        <li class="mb-1" classList={{ 'opacity-40': !isFulfilled() }}>
                           <div class="flex space-x-1 items-center text-sm">
                             <Show when={options.showRecipeNames}>
                               <span class="font-medium">{productName}</span>
@@ -103,7 +116,7 @@ export const BlueprintList: Component<{
                               <For each={ingredientSlots}>
                                 {(slot, slotIdx) => (
                                   <>
-                                    <IngredientSlot slot={slot} />
+                                    <IngredientSlot slot={slot} availableGoods={props.availableGoods} />
                                     {slotIdx() < ingredientSlots.length - 1 && <span class="mx-1">+</span>}
                                   </>
                                 )}

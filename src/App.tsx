@@ -55,6 +55,12 @@ export const App: Component = () => {
     return getGoods(allBuildings(), selectedResourcesSignal[0]());
   }
 
+  function availableGoods() {
+    const raw = selectedResourcesSignal[0]();
+    const produced = currentGoods();
+    return [...new Set([...raw, ...produced])];
+  }
+
   function goodsWithBlueprint() {
     return getGoods(
       [...allBuildings(), highlightedBlueprintSignal[0]()],
@@ -118,7 +124,7 @@ export const App: Component = () => {
           allBuildings={allBuildings}
           signal={selectedBuildingsSignal}
         />
-        <BuildingList selectedBuildingsAccr={allBuildings} />
+        <BuildingList selectedBuildingsAccr={allBuildings} availableGoods={availableGoods} />
         <BlueprintSelect
           signal={selectedBlueprintsSignal}
           allBuildings={allBuildings}
@@ -128,6 +134,7 @@ export const App: Component = () => {
           blueprintsSignal={selectedBlueprintsSignal}
           highlightedBlueprintSignal={highlightedBlueprintSignal}
           buildingsSignal={selectedBuildingsSignal}
+          availableGoods={availableGoods}
         />
         <GoodsList
           currentGoods={currentGoods}
