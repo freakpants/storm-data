@@ -9,19 +9,15 @@ import {
 
 const IngredientSlot: Component<{
   slot: Record<string, number>;
-  availableGoods: Accessor<number[]>;
+  available: boolean;
 }> = (props) => {
   const entries = Object.entries(props.slot);
-  const firstAvailable = () => entries.findIndex(([n]) => {
-    const pid = parseInt(n);
-    return !isNaN(pid) && props.availableGoods().includes(pid);
-  });
-  const [idx, setIdx] = createSignal(firstAvailable() >= 0 ? firstAvailable() : 0);
+  const [idx, setIdx] = createSignal(0);
   const selected = () => entries[idx() % entries.length];
-  const isAvailable = (name: string) => props.availableGoods().includes(name);
   return (
     <span
       class="flex items-center space-x-0.5 cursor-pointer hover:bg-gray-200 rounded px-0.5 py-0.5 select-none"
+      style={{ opacity: props.available ? 1 : 0.4 }}
       onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % entries.length); }}
       title="Click to switch ingredient"
     >
@@ -85,8 +81,12 @@ export const BuildingList: Component<{
                             props.availableGoods().includes(parseInt(p))
                           )
                         );
+                      const slotAvailable = (idx: number) =>
+                        Object.keys(recipe[`Ingredient_${idx + 1}_PIDs`] || {}).some((p) =>
+                          props.availableGoods().includes(parseInt(p))
+                        );
                       return (
-                        <li class="mb-1" style={{ opacity: isFulfilled() ? 1 : 0.4 }}>
+                        <li class="mb-1">
                           <div class="flex space-x-1 items-center text-sm">
                             <Show when={options.showRecipeNames}>
                               <span class="font-medium">{productName}</span>
@@ -103,13 +103,13 @@ export const BuildingList: Component<{
                               <For each={ingredientSlots}>
                                 {(slot, slotIdx) => (
                                   <>
-                                    <IngredientSlot slot={slot} availableGoods={props.availableGoods} />
+                                    <IngredientSlot slot={slot} available={slotAvailable(slotIdx())} />
                                     {slotIdx() < ingredientSlots.length - 1 && <span class="mx-1">+</span>}
                                   </>
                                 )}
                               </For>
                               <span class="mx-1">=</span>
-                              <span class="relative inline-flex">
+                              <span class="relative inline-flex" style={{ opacity: isFulfilled() ? 1 : 0.4 }}>
                                 <img
                                   src={`./icons/resources/60px-Icon_Resource_${makeResourceIconPart(productName)}.png`}
                                   alt={productName}
