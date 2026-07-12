@@ -5,3 +5,7 @@ game-data/
 ripper/
 ripper-json/
 .venv
+src/data/recipesByBuilding.json.bak
+src/data/recipesByBuilding_new.json
+src/data/api_recipes.json
+src/data/building_recipes.json
