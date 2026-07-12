@@ -4,3 +4,4 @@ save-file/*.save
 game-data/
 ripper/
 ripper-json/
+.venv
