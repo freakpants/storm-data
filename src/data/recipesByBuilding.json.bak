@@ -36,37 +36,34 @@
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Drizzle Water": 1
+        "?": 1
       },
-      "ProductPID": 321776,
-      "Time": 20,
-      "Grade": 2,
-      "RecipePID": 317682,
-      "GradePID": 317845
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317682
     },
     {
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Clearance Water": 1
+        "?": 1
       },
-      "ProductPID": 321775,
-      "Time": 20,
-      "Grade": 2,
-      "RecipePID": 317680,
-      "GradePID": 317845
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317680
     },
     {
       "Building": "Advanced Rain Catcher",
       "BuildingPID": 314027,
       "Product": {
-        "Storm Water": 1
+        "?": 1
       },
-      "ProductPID": 321777,
-      "Time": 20,
-      "Grade": 2,
-      "RecipePID": 317684,
-      "GradePID": 317845
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317684
     }
   ],
   "Alchemist Hut": [
@@ -4190,37 +4187,34 @@
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Drizzle Water": 1
+        "?": 1
       },
-      "ProductPID": 321776,
-      "Time": 20,
-      "Grade": 1,
-      "RecipePID": 317681,
-      "GradePID": 317844
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317681
     },
     {
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Clearance Water": 1
+        "?": 1
       },
-      "ProductPID": 321775,
-      "Time": 20,
-      "Grade": 1,
-      "RecipePID": 317679,
-      "GradePID": 317844
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317679
     },
     {
       "Building": "Rain Catcher",
       "BuildingPID": 314028,
       "Product": {
-        "Storm Water": 1
+        "?": 1
       },
-      "ProductPID": 321777,
-      "Time": 20,
-      "Grade": 1,
-      "RecipePID": 317683,
-      "GradePID": 317844
+      "ProductPID": 0,
+      "Time": 0,
+      "Grade": 0,
+      "RecipePID": 317683
     }
   ],
   "Rain Mill": [
