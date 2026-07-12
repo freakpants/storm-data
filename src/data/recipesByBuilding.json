@@ -371,7 +371,7 @@
       "RecipePID": 317812,
       "Ingredient_1": {
         "Leather": 3,
-        "PlantFibre": 3,
+        "PlantFiber": 3,
         "Wood": 8
       },
       "Ingredient_1_PIDs": {
@@ -994,7 +994,7 @@
         "Grain": 3,
         "Meat": 3,
         "Vegetables": 3,
-        "PlantFibre": 3,
+        "PlantFiber": 3,
         "Fish": 3
       },
       "Ingredient_1_PIDs": {
@@ -1728,7 +1728,7 @@
       "GradePID": 317842,
       "RecipePID": 317752,
       "Ingredient_1": {
-        "PlantFibre": 6,
+        "PlantFiber": 6,
         "Reeds": 6,
         "Algae": 6
       },
@@ -1903,7 +1903,7 @@
         "Grain": 2,
         "Meat": 2,
         "Vegetables": 2,
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Fish": 2
       },
       "Ingredient_1_PIDs": {
@@ -2537,7 +2537,7 @@
         "Grain": 2,
         "Meat": 2,
         "Vegetables": 2,
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Fish": 2
       },
       "Ingredient_1_PIDs": {
@@ -2745,7 +2745,7 @@
       "RecipePID": 317813,
       "Ingredient_1": {
         "Leather": 2,
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Wood": 6
       },
       "Ingredient_1_PIDs": {
@@ -2960,7 +2960,7 @@
         "Herbs": 12,
         "Berries": 12,
         "Vegetables": 12,
-        "PlantFibre": 12,
+        "PlantFiber": 12,
         "Roots": 12
       },
       "Ingredient_3_PIDs": {
@@ -3128,7 +3128,7 @@
       "GradePID": 317845,
       "RecipePID": 317754,
       "Ingredient_1": {
-        "PlantFibre": 3,
+        "PlantFiber": 3,
         "Reeds": 3,
         "Algae": 3
       },
@@ -3623,7 +3623,7 @@
       "RecipePID": 317811,
       "Ingredient_1": {
         "Leather": 4,
-        "PlantFibre": 4,
+        "PlantFiber": 4,
         "Wood": 10
       },
       "Ingredient_1_PIDs": {
@@ -3760,7 +3760,7 @@
       "GradePID": 317845,
       "RecipePID": 317754,
       "Ingredient_1": {
-        "PlantFibre": 3,
+        "PlantFiber": 3,
         "Reeds": 3,
         "Algae": 3
       },
@@ -4039,7 +4039,7 @@
         "Grain": 2,
         "Meat": 2,
         "Vegetables": 2,
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Fish": 2
       },
       "Ingredient_1_PIDs": {
@@ -4261,7 +4261,7 @@
       "RecipePID": 317811,
       "Ingredient_1": {
         "Leather": 4,
-        "PlantFibre": 4,
+        "PlantFiber": 4,
         "Wood": 10
       },
       "Ingredient_1_PIDs": {
@@ -4400,7 +4400,7 @@
       "GradePID": 317844,
       "RecipePID": 317708,
       "Ingredient_1": {
-        "PlantFibre": 8,
+        "PlantFiber": 8,
         "Reeds": 8,
         "Algae": 8,
         "Grain": 8,
@@ -4477,7 +4477,7 @@
       "RecipePID": 317813,
       "Ingredient_1": {
         "Leather": 2,
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Wood": 6
       },
       "Ingredient_1_PIDs": {
@@ -5466,7 +5466,7 @@
       "GradePID": 317846,
       "RecipePID": 317755,
       "Ingredient_1": {
-        "PlantFibre": 2,
+        "PlantFiber": 2,
         "Reeds": 2,
         "Algae": 2
       },
@@ -5560,7 +5560,7 @@
       "GradePID": 317845,
       "RecipePID": 317754,
       "Ingredient_1": {
-        "PlantFibre": 3,
+        "PlantFiber": 3,
         "Reeds": 3,
         "Algae": 3
       },
