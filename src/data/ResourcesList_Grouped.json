@@ -131,7 +131,7 @@
           "Inputs": ["Oil"]
         },
         {
-          "Inputs": ["Pigment"]
+          "Inputs": ["Dye"]
         },
         {
           "Inputs": ["Pottery"]
@@ -615,7 +615,7 @@
       }
     },
     {
-      "Name": "Pigment",
+      "Name": "Dye",
       "Recipes": [
         {
           "Inputs": ["Berries"]
@@ -725,13 +725,23 @@
       }
     },
     {
+      "Name": "Salt",
+      "Recipes": [],
+      "Buildings": {
+        "Collection": [],
+        "1 Star": [],
+        "2 Star": ["Brineworks"],
+        "3 Star": []
+      }
+    },
+    {
       "Name": "Tea",
       "Recipes": [
         {
           "Inputs": ["Herbs", "Drizzle Water", "Crystalized Dew"]
         },
         {
-          "Inputs": ["Pigment", "Storm Water", "Copper Bar"]
+          "Inputs": ["Dye", "Storm Water", "Copper Bar"]
         },
         {
           "Inputs": ["Resin", "Clearance Water", "Copper Bar"]
@@ -863,7 +873,7 @@
       "Name": "Scrolls",
       "Recipes": [
         {
-          "Inputs": ["Pigment", "Leather"]
+          "Inputs": ["Dye", "Leather"]
         }
       ],
       "Buildings": {

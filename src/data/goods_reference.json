@@ -1,0 +1,298 @@
+[
+  {
+    "PID": 315250,
+    "Name": "BlightFuel"
+  },
+  {
+    "PID": 315251,
+    "Name": "HearthParts"
+  },
+  {
+    "PID": 315253,
+    "Name": "Coal"
+  },
+  {
+    "PID": 315254,
+    "Name": "Pigment"
+  },
+  {
+    "PID": 315255,
+    "Name": "Flour"
+  },
+  {
+    "PID": 315256,
+    "Name": "Oil"
+  },
+  {
+    "PID": 315257,
+    "Name": "Salt"
+  },
+  {
+    "PID": 315258,
+    "Name": "Sea Marrow"
+  },
+  {
+    "PID": 315259,
+    "Name": "Biscuits"
+  },
+  {
+    "PID": 315260,
+    "Name": "Jerky"
+  },
+  {
+    "PID": 315261,
+    "Name": "Paste"
+  },
+  {
+    "PID": 315262,
+    "Name": "PickledGoods"
+  },
+  {
+    "PID": 315263,
+    "Name": "Pie"
+  },
+  {
+    "PID": 315264,
+    "Name": "Porridge"
+  },
+  {
+    "PID": 315265,
+    "Name": "Skewers"
+  },
+  {
+    "PID": 315266,
+    "Name": "Berries"
+  },
+  {
+    "PID": 315267,
+    "Name": "Eggs"
+  },
+  {
+    "PID": 315268,
+    "Name": "Fish"
+  },
+  {
+    "PID": 315269,
+    "Name": "Grain"
+  },
+  {
+    "PID": 315270,
+    "Name": "Herbs"
+  },
+  {
+    "PID": 315271,
+    "Name": "Insects"
+  },
+  {
+    "PID": 315272,
+    "Name": "Meat"
+  },
+  {
+    "PID": 315273,
+    "Name": "Mushrooms"
+  },
+  {
+    "PID": 315274,
+    "Name": "Roots"
+  },
+  {
+    "PID": 315275,
+    "Name": "Vegetables"
+  },
+  {
+    "PID": 315276,
+    "Name": "Bricks"
+  },
+  {
+    "PID": 315277,
+    "Name": "Fabric"
+  },
+  {
+    "PID": 315278,
+    "Name": "Parts"
+  },
+  {
+    "PID": 315279,
+    "Name": "Pipe"
+  },
+  {
+    "PID": 315280,
+    "Name": "Planks"
+  },
+  {
+    "PID": 315281,
+    "Name": "Algae"
+  },
+  {
+    "PID": 315282,
+    "Name": "Clay"
+  },
+  {
+    "PID": 315283,
+    "Name": "Leather"
+  },
+  {
+    "PID": 315284,
+    "Name": "PlantFibre"
+  },
+  {
+    "PID": 315285,
+    "Name": "Reeds"
+  },
+  {
+    "PID": 315286,
+    "Name": "Resin"
+  },
+  {
+    "PID": 315287,
+    "Name": "Scales"
+  },
+  {
+    "PID": 315288,
+    "Name": "Sparkdew"
+  },
+  {
+    "PID": 315289,
+    "Name": "Stone"
+  },
+  {
+    "PID": 315290,
+    "Name": "Wood"
+  },
+  {
+    "PID": 315291,
+    "Name": "CopperBar"
+  },
+  {
+    "PID": 315292,
+    "Name": "CopperOre"
+  },
+  {
+    "PID": 315293,
+    "Name": "CrystalizedDew"
+  },
+  {
+    "PID": 315294,
+    "Name": "Ale"
+  },
+  {
+    "PID": 315295,
+    "Name": "Boots"
+  },
+  {
+    "PID": 315296,
+    "Name": "Coats"
+  },
+  {
+    "PID": 315297,
+    "Name": "Incense"
+  },
+  {
+    "PID": 315298,
+    "Name": "TutorialScrolls"
+  },
+  {
+    "PID": 315299,
+    "Name": "Scrolls"
+  },
+  {
+    "PID": 315300,
+    "Name": "Tea"
+  },
+  {
+    "PID": 315301,
+    "Name": "TrainingGear"
+  },
+  {
+    "PID": 315302,
+    "Name": "Wine"
+  },
+  {
+    "PID": 315303,
+    "Name": "fertilizer"
+  },
+  {
+    "PID": 315304,
+    "Name": "bait"
+  },
+  {
+    "PID": 315305,
+    "Name": "Fuel Rod"
+  },
+  {
+    "PID": 315306,
+    "Name": "PackofBuildingMaterials"
+  },
+  {
+    "PID": 315307,
+    "Name": "PackofCrops"
+  },
+  {
+    "PID": 315308,
+    "Name": "PackofLuxuryGoods"
+  },
+  {
+    "PID": 315309,
+    "Name": "PackofProvisions"
+  },
+  {
+    "PID": 315310,
+    "Name": "PackofTradeGoods"
+  },
+  {
+    "PID": 315311,
+    "Name": "SimpleTools"
+  },
+  {
+    "PID": 315312,
+    "Name": "Amber"
+  },
+  {
+    "PID": 315313,
+    "Name": "AncientTablet"
+  },
+  {
+    "PID": 315314,
+    "Name": "ThunderblightShard"
+  },
+  {
+    "PID": 315315,
+    "Name": "Barrels"
+  },
+  {
+    "PID": 315316,
+    "Name": "Pottery"
+  },
+  {
+    "PID": 315317,
+    "Name": "Waterskin"
+  },
+  {
+    "PID": 315318,
+    "Name": "Fuel Core"
+  },
+  {
+    "PID": 315319,
+    "Name": "ClearanceWater"
+  },
+  {
+    "PID": 315320,
+    "Name": "DrizzleWater"
+  },
+  {
+    "PID": 315321,
+    "Name": "StormWater"
+  },
+  {
+    "PID": 315322,
+    "Name": "_MetaArtifacts"
+  },
+  {
+    "PID": 315323,
+    "Name": "_MetaFoodStockpiles"
+  },
+  {
+    "PID": 315324,
+    "Name": "_MetaMachinery"
+  }
+]

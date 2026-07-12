@@ -84,7 +84,7 @@
     "Clearance Water",
     "Wood",
     "Copper Ore",
-    "Pigment",
+    "Dye",
     "Plant Fiber",
     "Grain",
     "Roots",
@@ -93,6 +93,8 @@
     "Berries",
     "Sea Marrow",
     "Stone",
-    "Eggs"
+    "Eggs",
+    "Leather",
+    "Fish"
   ]
 }
