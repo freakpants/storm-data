@@ -210,7 +210,7 @@
         },
         {
           "Inputs": [
-            "Dye"
+            "Pigment"
           ]
         },
         {
@@ -969,7 +969,7 @@
       }
     },
     {
-      "Name": "Dye",
+      "Name": "Pigment",
       "Recipes": [
         {
           "Inputs": [
@@ -1170,7 +1170,7 @@
         },
         {
           "Inputs": [
-            "Dye",
+            "Pigment",
             "StormWater",
             "CopperBar"
           ]
@@ -1385,7 +1385,7 @@
       "Recipes": [
         {
           "Inputs": [
-            "Dye",
+            "Pigment",
             "Leather"
           ]
         }
