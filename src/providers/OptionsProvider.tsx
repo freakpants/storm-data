@@ -8,7 +8,8 @@ type Options = {
   showBuildingNames: boolean;
   showRecipeIcons: boolean;
   showRecipeNames: boolean;
-  showRecipeEfficiency: boolean;
+  showRecipeTime: boolean;
+  showRecipeGrade: boolean;
   showRecipeNumber: boolean;
 };
 
@@ -30,7 +31,8 @@ export function OptionsProvider(props) {
         showBuildingNames: true,
         showRecipeIcons: true,
         showRecipeNames: true,
-        showRecipeEfficiency: true,
+        showRecipeTime: true,
+        showRecipeGrade: true,
         showRecipeNumber: true,
       })}
     >

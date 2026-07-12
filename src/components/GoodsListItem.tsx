@@ -23,8 +23,11 @@ export const GoodsListItem: Component<{ productName: string }> = (props) => {
       <div>
         <Show when={options.showRecipeNames}>{productName}</Show>{' '}
         {/* todo: get the recipe so i have more info to display */}
-        {/* <Show when={options.showRecipeEfficiency}>
-          {recipe.Efficiency}
+        {/* <Show when={options.showRecipeTime}>
+          {Math.floor(recipe.Time/60)}:{String(recipe.Time%60).padStart(2,'0')}
+          </Show>{' '}
+          <Show when={options.showRecipeGrade}>
+          {'★'.repeat(recipe.Grade)}
           </Show>{' '}
           <Show when={options.showRecipeNumber}>
           {amount}

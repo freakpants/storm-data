@@ -137,13 +137,26 @@ export const Options: Component<{
               <label>
                 <input
                   type="checkbox"
-                  checked={options.showRecipeEfficiency}
+                  checked={options.showRecipeTime}
                   onChange={(e) =>
-                    setOptions('showRecipeEfficiency', e.target.checked)
+                    setOptions('showRecipeTime', e.target.checked)
                   }
                   class="mx-2"
                 />
-                Show Recipe Efficiency
+                Show Recipe Time
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={options.showRecipeGrade}
+                  onChange={(e) =>
+                    setOptions('showRecipeGrade', e.target.checked)
+                  }
+                  class="mx-2"
+                />
+                Show Recipe Grade
               </label>
             </div>
             <div>
